@@ -1,4 +1,4 @@
-/** Exercise 3
+/** Exercise 4
   * Run the file at the REPL with :load Hello.scala
   */
 
