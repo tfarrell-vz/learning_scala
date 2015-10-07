@@ -1,5 +1,6 @@
 /**
  * Excercise 1
+ * The type is going to be Double.
  */
 
 val stepOne = 9.0/5.0
