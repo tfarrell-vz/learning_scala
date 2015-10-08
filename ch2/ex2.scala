@@ -1,6 +1,6 @@
 /**
  * Exercise 2
- * Return an integer instead of a floating point number. 
+ * Return an integer instead of a floating point number.
  */
 
 val stepOne = 9/5
