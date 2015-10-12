@@ -19,3 +19,20 @@ def area2(radius: String): Double = {
     r * r * 3.141
   }
 }
+
+/*
+  Write a recursive function that prints the values from 5 to 50 by fives,
+  without using for or while loops. Can it be made tail-recursive?
+ */
+
+def printFiveToFifty(): Unit = {
+  @annotation.tailrec
+  def loop(cur: Int, stop: Int): Unit = {
+    if (cur > stop) return
+    else {
+      print(cur.toString() + " ")
+      loop(cur+5, stop)
+    }
+  }
+  loop(5, 50)
+}
