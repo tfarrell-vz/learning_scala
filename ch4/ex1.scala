@@ -21,6 +21,7 @@ def area2(radius: String): Double = {
 }
 
 /*
+  Exercise 3:
   Write a recursive function that prints the values from 5 to 50 by fives,
   without using for or while loops. Can it be made tail-recursive?
  */
