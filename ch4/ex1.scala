@@ -37,3 +37,13 @@ def printFiveToFifty(): Unit = {
   }
   loop(5, 50)
 }
+
+/*
+  Exercise 6
+  Write a function that calculates the difference between a pair of 2D points and returns
+  the result as a point.
+ */
+
+def pointDifferent(point1: (Double, Double), point2: (Double, Double)):(Double, Double) = {
+  (point2._1 - point1._1, point2._2 - point1._2)
+}
