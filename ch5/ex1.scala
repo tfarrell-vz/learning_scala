@@ -11,3 +11,12 @@ def appliedToThree(three: (Int, Int, Int), f: (Int, Int)=>Int): Int = {
   f(f(three._1, three._2), three._3)
 }
 
+/* Exercise 3
+  Write a higher-order function that takes an integer and returns a function. The returned
+  function should take a single integer argument (say, "y") and return the product of y
+  and the integer passed to the function.
+ */
+
+def takeInt(n: Int): (Int=>Int) = {
+  (y: Int) => y * n
+}
