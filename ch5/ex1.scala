@@ -20,3 +20,10 @@ def appliedToThree(three: (Int, Int, Int), f: (Int, Int)=>Int): Int = {
 def takeInt(n: Int): (Int=>Int) = {
   (y: Int) => y * n
 }
+
+/*
+  Exercise 5
+  How would you store a "square" function as a value? (Provide alternative to the text's example.)
+ */
+val square = (x: Int) => x*x
+
