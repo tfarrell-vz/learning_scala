@@ -45,3 +45,25 @@ val predicate = (x: Int) => x % 2 == 0
 conditional(2, predicate, square) // 4
 conditional(3, predicate, square) // 3
 
+/*
+  Exercise 7
+  "typesafe" as "FizzBuzz"
+ */
+
+def conditional2[A,B](x: A, p: A => Boolean, f: A => B) = {
+  if (p(x)) f(x)
+  else x
+}
+
+def typesafe(): Unit = {
+  val ts = (x: Int) => x match {
+    case x if (x % 3 == 0 && x % 5 == 0) => "typesafe"
+    case x if (x % 3 == 0) => "type"
+    case x if (x % 5 == 0) => "safe"
+    case x => x.toString()
+  }
+
+  for(i <- 1 to 100) {
+    println(ts(i))
+  }
+}
