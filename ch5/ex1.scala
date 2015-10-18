@@ -50,9 +50,9 @@ conditional(3, predicate, square) // 3
   "typesafe" as "FizzBuzz"
  */
 
-def conditional2[A,B](x: A, p: A => Boolean, f: A => B) = {
+def conditional2[A,B](x: A, p: A => Boolean, f: A => B)(g: A => B): B = {
   if (p(x)) f(x)
-  else x
+  else g(x)
 }
 
 def typesafe(): Unit = {
@@ -65,5 +65,21 @@ def typesafe(): Unit = {
 
   for(i <- 1 to 100) {
     println(ts(i))
+  }
+}
+
+def tsP(x: Int): Boolean = x % 3 == 0 || x % 5 == 0
+
+def tsF(x: Int): String = x match {
+  case x if (x % 3 == 0 && x % 5 == 0) => "typesafe"
+  case x if (x % 3 == 0) => "type"
+  case x if (x % 5 == 0) => "safe"
+}
+
+def typesafe2(): Unit = {
+  val g = (x: Int) => x.toString()
+
+  for(i <- 1 to 100) {
+    println(conditional2(i, tsP, tsF)(g))
   }
 }
