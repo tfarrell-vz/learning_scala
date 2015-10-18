@@ -27,3 +27,21 @@ def takeInt(n: Int): (Int=>Int) = {
  */
 val square = (x: Int) => x*x
 
+/*
+  Exercise 6
+  Write a function called 'conditional' that takes a value x and two functions, p and f,
+  and returns a value of the same type as x. The p function is a predicate, taking the value
+  x and returning a Boolean b. The f function also takes the value x and returns a new
+  value of the same type.
+ */
+
+def conditional[A](x: A, p: A => Boolean, f: A => A) = {
+  if (p(x)) f(x)
+  else x
+}
+
+val predicate = (x: Int) => x % 2 == 0
+
+conditional(2, predicate, square) // 4
+conditional(3, predicate, square) // 3
+
