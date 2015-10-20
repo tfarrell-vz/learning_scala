@@ -16,3 +16,16 @@ def firstTwentyOddLong(): List[Long] = {
 }
 
 println(firstTwentyOddLong())
+
+def firstTwentyOddLongImmutable(): List[Long] = {
+  def loop(i: Int, term: Int, acc: List[Long]): List[Long] = {
+    if (i > term) acc
+    else if (i % 2 == 1) loop(i+1, term, i.toLong :: acc)
+    else loop(i + 1, term, acc)
+  }
+  loop(1, 40, List()).reverse
+}
+
+println(firstTwentyOddLongImmutable())
+
+firstTwentyOddLong() == firstTwentyOddLongImmutable() // true ;)
