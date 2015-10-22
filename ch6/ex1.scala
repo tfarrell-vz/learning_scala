@@ -29,3 +29,19 @@ def firstTwentyOddLongImmutable(): List[Long] = {
 println(firstTwentyOddLongImmutable())
 
 firstTwentyOddLong() == firstTwentyOddLongImmutable() // true ;)
+
+
+/*
+ Write a function that returns a list of a numbers factors.
+ */
+def factors(n: Int): List[Int] = {
+  def loop(i: Int, len: Int, acc: List[Int]): List[Int] = {
+    if (i >= len) acc.reverse
+    else {
+      if (len % i == 0) loop(i+1, n, i :: acc)
+      else loop(i+1, n, acc)
+    }
+  }
+  if (n >= 2) loop(2, n, List())
+  else List()
+}
