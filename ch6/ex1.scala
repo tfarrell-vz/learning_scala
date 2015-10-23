@@ -45,3 +45,9 @@ def factors(n: Int): List[Int] = {
   if (n >= 2) loop(2, n, List())
   else List()
 }
+
+def applyFactors(xs: List[Int]): List[Int] = {
+  xs.flatMap(x => factors(x))
+}
+
+
