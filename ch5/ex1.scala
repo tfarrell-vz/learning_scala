@@ -114,7 +114,7 @@ def tsF(x: Int): String = x match {
 }
 
 def typesafe2(): Unit = {
-  val g = (x: Int) => x.toString()
+  val g = (x: Int) => x.toString
 
   for(i <- 1 to 100) {
     println(conditional2(i, tsP, tsF)(g))
