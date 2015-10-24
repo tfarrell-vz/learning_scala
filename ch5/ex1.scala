@@ -11,6 +11,9 @@ def appliedToThree(three: (Int, Int, Int), f: (Int, Int)=>Int): Int = {
   f(f(three._1, three._2), three._3)
 }
 
+val smallerofTwo = (x: Int, y: Int) => if (x > y) y else x
+
+
 /* Exercise 3
   Write a higher-order function that takes an integer and returns a function. The returned
   function should take a single integer argument (say, "y") and return the product of y
@@ -21,11 +24,13 @@ def takeInt(n: Int): (Int=>Int) = {
   (y: Int) => y * n
 }
 
+
 /*
   Exercise 5
   How would you store a "square" function as a value? (Provide alternative to the text's example.)
  */
 val square = (x: Int) => x*x
+
 
 /*
   Exercise 6
@@ -44,6 +49,7 @@ val predicate = (x: Int) => x % 2 == 0
 
 conditional(2, predicate, square) // 4
 conditional(3, predicate, square) // 3
+
 
 /*
   Exercise 7
