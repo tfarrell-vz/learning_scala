@@ -13,6 +13,19 @@ def appliedToThree(three: (Int, Int, Int), f: (Int, Int)=>Int): Int = {
 
 val smallerofTwo = (x: Int, y: Int) => if (x > y) y else x
 
+def bigThree(): Int = {
+  val random_0 = util.Random.nextInt()
+  val random_1 = util.Random.nextInt()
+
+  println("Random one: " + random_0)
+  println("Random two: " + random_1)
+
+  val max = funcLiteralMax(random_0, random_1)
+
+  println("Max: " + max)
+  max
+}
+
 
 /* Exercise 3
   Write a higher-order function that takes an integer and returns a function. The returned
