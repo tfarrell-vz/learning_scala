@@ -94,10 +94,10 @@ def conditional2[A,B](x: A, p: A => Boolean, f: A => B)(g: A => B): B = {
 
 def typesafe(): Unit = {
   val ts = (x: Int) => x match {
-    case x if (x % 3 == 0 && x % 5 == 0) => "typesafe"
-    case x if (x % 3 == 0) => "type"
-    case x if (x % 5 == 0) => "safe"
-    case x => x.toString()
+    case x if x % 3 == 0 && x % 5 == 0 => "typesafe"
+    case x if x % 3 == 0 => "type"
+    case x if x % 5 == 0 => "safe"
+    case x => x.toString
   }
 
   for(i <- 1 to 100) {
@@ -108,9 +108,9 @@ def typesafe(): Unit = {
 def tsP(x: Int): Boolean = x % 3 == 0 || x % 5 == 0
 
 def tsF(x: Int): String = x match {
-  case x if (x % 3 == 0 && x % 5 == 0) => "typesafe"
-  case x if (x % 3 == 0) => "type"
-  case x if (x % 5 == 0) => "safe"
+  case x if x % 3 == 0 && x % 5 == 0 => "typesafe"
+  case x if x % 3 == 0 => "type"
+  case x if x % 5 == 0 => "safe"
 }
 
 def typesafe2(): Unit = {
