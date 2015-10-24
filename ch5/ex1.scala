@@ -11,6 +11,11 @@ def appliedToThree(three: (Int, Int, Int), f: (Int, Int)=>Int): Int = {
   f(f(three._1, three._2), three._3)
 }
 
+
+/*
+  Exercise 2: Play with randoms and max and min.
+ */
+
 val smallerofTwo = (x: Int, y: Int) => if (x > y) y else x
 
 def bigThree(): Int = {
@@ -24,6 +29,19 @@ def bigThree(): Int = {
 
   println("Max: " + max)
   max
+}
+
+def smallThree(): Int = {
+  val r1 = util.Random.nextInt()
+  val r2 = util.Random.nextInt()
+
+  println("Random one: " + r1)
+  println("Random two: " + r2)
+
+  val min = smallerofTwo(r1, r2)
+
+  println("Min: " + min)
+  min
 }
 
 
